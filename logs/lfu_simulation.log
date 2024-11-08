@@ -1,0 +1,72 @@
+Cache Capacity:4
+
+Inserting: key 1 with value: 117
+Inserting: key 2 with value: 127
+Inserting: key 3 with value: 137
+Fetching value from cache with key 1: 117
+
+Item in Cache:
+***************
+freq-1:[2, 3]
+freq-2:[1]
+***************
+
+Inserting: key 2 with value: 122
+
+Item in Cache:
+***************
+freq-1:[3]
+freq-2:[1, 2]
+***************
+
+Inserting: key 7 with value: 177
+
+Item in Cache:
+***************
+freq-1:[3, 7]
+freq-2:[1, 2]
+***************
+
+Inserting: key 4 with value: 148
+
+Item in Cache:
+***************
+freq-1:[3, 4]
+freq-2:[1, 2]
+***************
+
+Fetching value from cache with key 4: 148
+
+Item in Cache:
+***************
+freq-1:[3]
+freq-2:[1, 2, 4]
+***************
+
+Fetching value from cache with key 1: 117
+Fetching value from cache with key 2: 122
+Fetching value from cache with key 4: 148
+
+Item in Cache:
+***************
+freq-1:[3]
+freq-3:[1, 2, 4]
+***************
+
+Inserting: key 10 with value: 1107
+Fetching value from cache with key 10: 1107
+
+Item in Cache:
+***************
+freq-3:[1, 2, 4]
+freq-2:[10]
+***************
+
+Inserting: key 11 with value: 1117
+
+Item in Cache:
+***************
+freq-3:[1, 2, 4]
+freq-1:[11]
+***************
+

@@ -1,0 +1,39 @@
+Cache Capacity:4
+
+Inserting: key 1 with value: 117
+Inserting: key 2 with value: 127
+Inserting: key 3 with value: 137
+Fetching value from cache with key 1: 117
+
+Item in Cache:
+***************
+1->117
+2->127
+3->137
+***************
+
+Inserting: key 2 with value: 122
+
+Item in Cache:
+***************
+1->117
+2->122
+3->137
+***************
+
+Inserting: key 7 with value: 177
+
+Item in Cache:
+***************
+1->117
+2->122
+3->137
+7->177
+***************
+
+Inserting: key 4 with value: 148
+
+
+**************************************************
+
+		Cache is Full.Please flush it.
