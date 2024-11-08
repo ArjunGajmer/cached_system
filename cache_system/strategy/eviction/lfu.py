@@ -4,10 +4,11 @@ from cache_system.strategy.base import BaseCacheStrategy
 
 
 class LFUCacheStrategy(BaseCacheStrategy):
+
     def __init__(self, capacity):
         super().__init__(capacity=capacity)
         self._data: Dict[str, FrequencyBasedCachedData] = {}
-        self._freq_map: {int, Dict[str, FrequencyBasedCachedData]} = {}
+        self._freq_map: Dict[int, Dict[str, FrequencyBasedCachedData]] = {}
         self._min_frequency: float = float('inf')
 
     def evict(self):
@@ -64,8 +65,8 @@ class LFUCacheStrategy(BaseCacheStrategy):
         del self._freq_map
         del self._min_frequency
         self._data: Dict[str, FrequencyBasedCachedData] = {}
-        self._freq_map: {int, Dict[str, FrequencyBasedCachedData]} = {}
-        self._min_frequency = float('inf')
+        self._freq_map: Dict[int, Dict[str, FrequencyBasedCachedData]] = {}
+        self._min_frequency: float = float('inf')
 
     def __str__(self):
         d = "\n".join(

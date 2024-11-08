@@ -335,8 +335,7 @@ Follow the steps below to run a simulation:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/cache-system.git
-   cd cache-system
+   git clone git@github.com:ArjunGajmer/cached_system.git
    ```
 
 2. **Set Up the Environment**:
