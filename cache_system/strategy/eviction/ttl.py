@@ -29,8 +29,7 @@ class TTlCacheStrategy(BaseEvictionBasedCacheStrategy):
             raise f"Cache Is Full"
 
     def insert(self, key: Union[int, str], value: Union[int, str]):
-        if self._dl.is_full():
-            self.evict()
+        self.evict()
         node = LinkedListNode(CacheData(key=key, value=value))
         self._dl.insert_at_last(node)
         self._data[key] = (node, datetime.datetime.now() + datetime.timedelta(seconds=self.__ttl_period))
