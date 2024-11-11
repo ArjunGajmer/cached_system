@@ -33,6 +33,12 @@ def run_ttl_simulation():
     cache.insert(4, 400)
     logging.debug(cache)
 
+    logging.debug(f"\nAfter {1} second\n")
+    time.sleep(ttl_period + 1)
+    cache.get_value(2)
+    logging.debug(cache)
+
+
     logging.debug(f"\nAfter {ttl_period + 1} second\n")
     time.sleep(ttl_period + 1)
     cache.insert(5, 500)

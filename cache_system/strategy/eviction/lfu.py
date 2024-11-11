@@ -70,7 +70,7 @@ class LFUCacheStrategy(BaseCacheStrategy):
 
     def __str__(self):
         d = "\n".join(
-            f"freq-{freq}:{[node.key for node in nodes.values()]}"
+            f"freq-{freq}:{[(node.key, node.value) for node in nodes.values()]}"
             for freq, nodes in self._freq_map.items()
         )
         return f"\nItem in Cache:\n{'*' * 15}\n{d}\n{'*' * 15}\n"

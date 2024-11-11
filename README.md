@@ -116,40 +116,40 @@ Fetching value from cache with key 1: 117
 
 Item in Cache:
 ***************
-freq-1:[2, 3]
-freq-2:[1]
+freq-1:[(2, 127), (3, 137)]
+freq-2:[(1, 117)]
 ***************
 
 Inserting: key 2 with value: 122
 
 Item in Cache:
 ***************
-freq-1:[3]
-freq-2:[1, 2]
+freq-1:[(3, 137)]
+freq-2:[(1, 117), (2, 122)]
 ***************
 
 Inserting: key 7 with value: 177
 
 Item in Cache:
 ***************
-freq-1:[3, 7]
-freq-2:[1, 2]
+freq-1:[(3, 137), (7, 177)]
+freq-2:[(1, 117), (2, 122)]
 ***************
 
 Inserting: key 4 with value: 148
 
 Item in Cache:
 ***************
-freq-1:[3, 4]
-freq-2:[1, 2]
+freq-1:[(3, 137), (4, 148)]
+freq-2:[(1, 117), (2, 122)]
 ***************
 
 Fetching value from cache with key 4: 148
 
 Item in Cache:
 ***************
-freq-1:[3]
-freq-2:[1, 2, 4]
+freq-1:[(3, 137)]
+freq-2:[(1, 117), (2, 122), (4, 148)]
 ***************
 
 Fetching value from cache with key 1: 117
@@ -158,8 +158,8 @@ Fetching value from cache with key 4: 148
 
 Item in Cache:
 ***************
-freq-1:[3]
-freq-3:[1, 2, 4]
+freq-1:[(3, 137)]
+freq-3:[(1, 117), (2, 122), (4, 148)]
 ***************
 
 Inserting: key 10 with value: 1107
@@ -167,19 +167,17 @@ Fetching value from cache with key 10: 1107
 
 Item in Cache:
 ***************
-freq-3:[1, 2, 4]
-freq-2:[10]
+freq-3:[(1, 117), (2, 122), (4, 148)]
+freq-2:[(10, 1107)]
 ***************
 
 Inserting: key 11 with value: 1117
 
 Item in Cache:
 ***************
-freq-3:[1, 2, 4]
-freq-1:[11]
+freq-3:[(1, 117), (2, 122), (4, 148)]
+freq-1:[(11, 1117)]
 ***************
-
-
 ```
 
 **TTL (Time-to-Live) Eviction**
@@ -193,10 +191,23 @@ Inserting: key 4 with value: 400
 
 Items in Cache:
 ***************
-1->101, Exp:1.999832
-2->201, Exp:1.999259
-3->301, Exp:1.999287
-4->400, Exp:1.999312
+1->101, Exp:1.999844
+2->201, Exp:1.999515
+3->301, Exp:1.999545
+4->400, Exp:1.999573
+***************
+
+
+After 1 second
+
+Fetching value from cache with key 2: 201
+
+Items in Cache:
+***************
+1->101, Exp:-1.007617
+2->201, Exp:1.99815
+3->301, Exp:-1.007566
+4->400, Exp:-1.007548
 ***************
 
 
@@ -206,7 +217,7 @@ Inserting: key 5 with value: 500
 
 Items in Cache:
 ***************
-5->500, Exp:1.99985
+5->500, Exp:1.999948
 ***************
 
 
@@ -216,8 +227,8 @@ Inserting: key 6 with value: 600
 
 Items in Cache:
 ***************
-5->500, Exp:0.994137
-6->600, Exp:1.999894
+5->500, Exp:0.994295
+6->600, Exp:1.999895
 ***************
 
 
@@ -227,8 +238,8 @@ Inserting: key 7 with value: 700
 
 Items in Cache:
 ***************
-6->600, Exp:0.996058
-7->700, Exp:1.999884
+6->600, Exp:0.996137
+7->700, Exp:1.999938
 ***************
 
 
@@ -238,8 +249,8 @@ Inserting: key 8 with value: 800
 
 Items in Cache:
 ***************
-7->700, Exp:0.993604
-8->800, Exp:1.999811
+7->700, Exp:0.993956
+8->800, Exp:1.999871
 ***************
 
 
@@ -248,8 +259,8 @@ After 1 second
 
 Items in Cache:
 ***************
-7->700, Exp:-0.011761
-8->800, Exp:0.994495
+7->700, Exp:-0.00722
+8->800, Exp:0.998698
 ***************
 
 
@@ -259,7 +270,7 @@ Inserting: key 1 with value: 10
 
 Items in Cache:
 ***************
-1->10, Exp:1.999643
+1->10, Exp:1.999948
 ***************
 
 Inserting: key 11 with value: 10
@@ -267,9 +278,9 @@ Inserting: key 12 with value: 10
 
 Items in Cache:
 ***************
-1->10, Exp:1.998823
-11->10, Exp:1.999772
-12->10, Exp:1.999918
+1->10, Exp:1.999736
+11->10, Exp:1.999904
+12->10, Exp:1.999963
 ***************
 
 Inserting: key 13 with value: 10
